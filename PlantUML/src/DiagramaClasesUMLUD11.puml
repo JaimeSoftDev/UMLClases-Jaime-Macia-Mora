@@ -1,0 +1,12 @@
+@startuml
+class Member
+class BoardMember
+class Event
+class Conference
+class BoardMeeting
+class Location
+class Person
+Event <|-- (Conference, BoardMeeting)
+Person <|-- Member
+Member <|-- BoardMember
+@enduml
