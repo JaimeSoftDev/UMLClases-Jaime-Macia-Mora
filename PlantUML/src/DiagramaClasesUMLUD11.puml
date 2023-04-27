@@ -6,7 +6,15 @@ class Conference
 class BoardMeeting
 class Location
 class Person
+class AAUOC
 Event <|-- (Conference, BoardMeeting)
 Person <|-- Member
 Member <|-- BoardMember
+Event "0..*" -- "1"Location : isLocatedIn
+Event "0..*" -- "0..*" Member : attendsTo
+BoardMeeting "0..*" -- "0..*" BoardMember : attendsTo
+Conference -- Person : attendsTo
+AAUOC o-- "0..*" Location
+AAUOC o-- "0..*" Event
+AAUOC o-- "0..*" Person
 @enduml
